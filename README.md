@@ -27,14 +27,14 @@ public class WordCount {
             
          reader = new BufferedReader(new FileReader(file));
             String k;
-            String[] words;
             int word_Count = 0;
             while ((k = reader.readLine()) != null) {
-            words = k.split(" ");
-            word_Count++; 
+            String[] words = k.split(" ");
+            System.out.println(Arrays.toString(words));
+            word_Count += words.length;  
             }
-            System.out.print(word_Count);          
+            System.out.print(word_Count);       
       }
       
-}         
+}            
         
