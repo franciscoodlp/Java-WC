@@ -4,7 +4,13 @@ import java.util.*;
 public class WordCount {
    
       public static void main(String[] args) throws Exception {
-         
+      
+      fileCounter(args, 4); 
+      
+      }
+      
+      public static void fileCounter(String[] args, int x) throws Exception {
+          
          File file = new File(args[0]);
          
          BufferedReader reader = new BufferedReader(new FileReader(file));        
@@ -14,19 +20,17 @@ public class WordCount {
                line_Count++;
                s = reader.readLine();
             }
-         System.out.println(line_Count);
          
          reader = new BufferedReader(new FileReader(file));  
-            int charCount = 0;
+            int char_Count = 0;
             String c = reader.readLine();
             while(c != null) {
                String[] words = c.split(" ");
                for (String word : words) {
-                  charCount += word.length();
+                  char_Count += word.length();
                }
                c = reader.readLine();   
             }
-            System.out.println(charCount);
          
          reader = new BufferedReader(new FileReader(file));
             String k;
@@ -35,8 +39,19 @@ public class WordCount {
             String[] words = k.split(" ");
             word_Count += words.length;  
             }
-         System.out.print(word_Count);       
-      }
-      
+         
+         if (x == 1) {
+         System.out.println("Line count = " + line_Count);
+         } else if(x == 2) {
+         System.out.println("Character count = " + char_Count);
+         } else if(x == 3) {
+         System.out.println("Word count = " + word_Count);
+         } else if(x == 4) {
+         System.out.println("Line count = " + line_Count);
+         System.out.println("Character count = " + char_Count);
+         System.out.print("Word count = " + word_Count);                 
+         }
+           
+      } 
 }         
-              
+                  
