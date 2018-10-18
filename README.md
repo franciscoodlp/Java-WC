@@ -21,7 +21,10 @@ public class WordCount {
             while(reader.read() != -1) {
                char_Count++;
             }
-            System.out.print(char_Count);       
+            System.out.print(char_Count - line_Count);
+            
+         reader = new BufferedReader(new FileReader(file));
+                     
       }
       
 }         
